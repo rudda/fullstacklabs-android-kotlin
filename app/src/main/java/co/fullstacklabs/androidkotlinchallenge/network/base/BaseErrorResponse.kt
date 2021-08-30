@@ -1,0 +1,3 @@
+package co.fullstacklabs.androidkotlinchallenge.network.base
+
+abstract class BaseErrorResponse

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ContentLoadingProgress">
+        <item name="colorAccent">@color/blue_gray_500</item>
+    </style>
+
+    <style name="Title" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/blue_gray_700</item>
+        <item name="android:textSize">36sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Heading" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/blue_gray_700</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="Paragraph" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/blue_gray_500</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+</resources>

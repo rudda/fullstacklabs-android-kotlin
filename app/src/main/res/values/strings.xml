@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Android Kotlin Challenge</string>
+    <string name="title_nodes">Nodes</string>
+    <string name="title_sample">Thawing Springs</string>
+    <string name="url_sample">http://localhost:3002</string>
+    <string name="status_online">Online</string>
+    <string name="status_offline">Offline</string>
+    <string name="expanded_sample">Blocks go here</string>
+</resources>
