@@ -22,7 +22,14 @@ class NodesFragment: BaseFragment(R.layout.fragment_nodes) {
 
     override fun setupObservers() {
         observe(viewModel.nodes) {
-            adapter.data = it
+            var myList  = mutableListOf<NodesAdapter.DataItem>()
+
+            it.forEach { node ->
+                myList.add( NodesAdapter.DataItem.NodeItem(node))
+            }
+
+            adapter.data = myList
+            adapter.notifyDataSetChanged()
         }
     }
 
@@ -30,7 +37,7 @@ class NodesFragment: BaseFragment(R.layout.fragment_nodes) {
         binding.rvNodes.apply {
             itemAnimator = DefaultItemAnimator()
             adapter = this@NodesFragment.adapter.apply {
-                setHasStableIds(true)
+                //setHasStableIds(true)
                 setOnItemClickListener(object: NodesAdapter.OnItemClickListener {
                     override fun onItemClick(model: NodeModel) {
                         viewModel.expandNode(node = model)

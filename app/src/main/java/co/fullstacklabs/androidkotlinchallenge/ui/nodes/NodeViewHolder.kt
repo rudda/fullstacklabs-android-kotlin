@@ -7,7 +7,7 @@ import co.fullstacklabs.androidkotlinchallenge.base.BaseViewHolder
 import co.fullstacklabs.androidkotlinchallenge.databinding.ItemNodeBinding
 import co.fullstacklabs.androidkotlinchallenge.domain.model.NodeModel
 
-internal class NodeViewHolder(private val viewBinding: ItemNodeBinding):
+internal class NodeViewHolder(val viewBinding: ItemNodeBinding):
     BaseViewHolder(viewBinding) {
 
     fun binding(node: NodeModel) {
@@ -33,10 +33,12 @@ internal class NodeViewHolder(private val viewBinding: ItemNodeBinding):
 
         if (node.expanded) {
             viewBinding.mtvExpanded.visibility = View.VISIBLE
+            viewBinding.rvBlock.visibility = View.VISIBLE
             viewBinding.ivArrowExpand.setImageResource(R.drawable.ic_arrow_up)
 
         } else {
             viewBinding.mtvExpanded.visibility = View.GONE
+            viewBinding.rvBlock.visibility = View.GONE
             viewBinding.ivArrowExpand.setImageResource(R.drawable.ic_arrow_down)
         }
     }
