@@ -9,7 +9,7 @@ internal data class NodeStatusResponse(
     @Json(name = "node_name")
     val nodeName: String
 )
-
+//its cool
 internal fun NodeStatusResponse.toDomain(): NodeStatusModel {
     return NodeStatusModel(name = nodeName)
 }

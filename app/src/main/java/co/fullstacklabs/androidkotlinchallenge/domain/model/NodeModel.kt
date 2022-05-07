@@ -6,5 +6,6 @@ data class NodeModel(
     val online: Boolean = false,
     val name: String = "",
     val loading: Boolean = false,
-    val expanded: Boolean = false
+    val expanded: Boolean = false,
+    var block : List<NodeBlockModel> = emptyList()
 )

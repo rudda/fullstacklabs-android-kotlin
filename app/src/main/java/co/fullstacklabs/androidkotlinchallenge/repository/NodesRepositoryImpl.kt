@@ -1,5 +1,6 @@
 package co.fullstacklabs.androidkotlinchallenge.repository
 
+import co.fullstacklabs.androidkotlinchallenge.domain.model.NodeBlockModel
 import co.fullstacklabs.androidkotlinchallenge.domain.model.NodeStatusModel
 import co.fullstacklabs.androidkotlinchallenge.extensions.parseResponse
 import co.fullstacklabs.androidkotlinchallenge.network.NodesNetwork
@@ -14,6 +15,13 @@ internal class NodesRepositoryImpl(
     @Throws(NetworkException::class)
     override suspend fun getNodeStatus(url: String): NodeStatusModel {
         return when(val outcome = network.getNodeStatus(url).parseResponse()) {
+            is Outcome.Success -> outcome.value.toDomain()
+            is Outcome.Failure -> throw NetworkException.parse(outcome.statusCode)
+        }
+    }
+    @Throws(NetworkException::class)
+    override suspend fun getBlock(url: String): List<NodeBlockModel> {
+        return when(val outcome = network.getNodeBlock(url).parseResponse()) {
             is Outcome.Success -> outcome.value.toDomain()
             is Outcome.Failure -> throw NetworkException.parse(outcome.statusCode)
         }
